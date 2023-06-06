@@ -115,12 +115,19 @@ ids = test[['PassengerId']]
 
 It is your choice how much or how little EDA that you perform. But you should do enough EDA that you feel comfortable with the data and what you'll need to do to make it so that you can run a neural network on it.
 
-What follows in some suggestions for EDA. This is by no means exhaustive, but just a sampling of what you can do. It is important for each EDA code chunk that you run that you reflect on what the output is telling you.
+It is prudent to investigate the attributes of the data frames, create visualizations, and perform data analysis.
 
-#### Overview
+### Preprocessing
 
 
 ```python
+# Print the first rows of the train data
+
+```
+
+
+```python
+# __SOLUTION__ 
 # Print the first rows of the train data
 train.head()
 ```
@@ -245,6 +252,13 @@ train.head()
 
 ```python
 # Look at the information regarding the train data
+
+```
+
+
+```python
+# __SOLUTION__ 
+# Look at the information regarding the train data
 train.info()
 ```
 
@@ -271,6 +285,13 @@ train.info()
 
 
 ```python
+# Print the first rows of the test data
+
+```
+
+
+```python
+# __SOLUTION__ 
 # Print the first rows of the test data
 test.head()
 ```
@@ -389,6 +410,13 @@ test.head()
 
 ```python
 # Look at the information regarding the test data
+
+```
+
+
+```python
+# __SOLUTION__ 
+# Look at the information regarding the test data
 test.info()
 ```
 
@@ -415,6 +443,13 @@ test.info()
 
 ```python
 # Print the number of rows and columns in each data set
+
+```
+
+
+```python
+# __SOLUTION__ 
+# Print the number of rows and columns in each data set
 print("Total number of rows in training data ", train.shape[0])
 print("Total number of columns in training data ", train.shape[1])
 print("Total number of rows in test data ", test.shape[0])
@@ -435,31 +470,31 @@ There are a number of plots that we could do. Here are a few with brief comments
 
 
 ```python
-# Historgram with survival and sex
+# Histogram with survival and sex
 sns.histplot(x='Survived', hue = 'Sex', stat = 'percent', data = train)
 plt.show()
 ```
 
 
     
-![png](index_files/index_27_0.png)
+![png](index_files/index_31_0.png)
     
 
 
 Since '0' represents not surviving and '1' represents surviving, then we can see that females were much more likely to survice than males.
 
-And now let's look at survival by class (frist, second, or third).
+And now let's look at survival by class (first, second, or third).
 
 
 ```python
-# Historgram with survival and class
+# Histogram with survival and class
 sns.histplot(x="Survived", hue = 'Pclass', stat = 'percent',  data = train)
 plt.show()
 ```
 
 
     
-![png](index_files/index_29_0.png)
+![png](index_files/index_33_0.png)
     
 
 
@@ -478,7 +513,7 @@ plt.show()
 
 
     
-![png](index_files/index_31_0.png)
+![png](index_files/index_35_0.png)
     
 
 
@@ -496,7 +531,7 @@ plt.show()
 
 
     
-![png](index_files/index_33_0.png)
+![png](index_files/index_37_0.png)
     
 
 
@@ -508,21 +543,9 @@ Again there are a myriad of data analysis that we can do, but let's show some ex
 
 
 ```python
-# Surival rate by sex
+# Surival rate by sex 
 ((train.groupby(['Sex','Survived']).Survived.count() * 100) / train.groupby('Sex').Survived.count())
 ```
-
-
-
-
-    Sex     Survived
-    female  0           25.796178
-            1           74.203822
-    male    0           81.109185
-            1           18.890815
-    Name: Survived, dtype: float64
-
-
 
 Females had about 74% chance of survival where as men had only about a 19%.
 
@@ -534,26 +557,6 @@ Now let's do the same, but with class as well.
 (train.groupby(['Pclass','Survived', 'Sex']).Survived.count() * 100) / train.groupby('Pclass').Survived.count()
 ```
 
-
-
-
-    Pclass  Survived  Sex   
-    1       0         female     1.388889
-                      male      35.648148
-            1         female    42.129630
-                      male      20.833333
-    2       0         female     3.260870
-                      male      49.456522
-            1         female    38.043478
-                      male       9.239130
-    3       0         female    14.663951
-                      male      61.099796
-            1         female    14.663951
-                      male       9.572301
-    Name: Survived, dtype: float64
-
-
-
 We can see that as the class increases, the likelihood of survivial increases; and again females are more likely to survive then males.
 
 ### Preprocessing
@@ -564,6 +567,13 @@ In order for our neural network to run properly, we need to see if we have any m
 
 
 ```python
+# Check for nulls in the train set
+
+```
+
+
+```python
+# __SOLUTION__
 # Check for nulls in the train set
 train.isnull().sum()
 ```
@@ -589,7 +599,14 @@ train.isnull().sum()
 
 
 ```python
-# Check for nulls in teh test set
+# Check for nulls in the test set
+
+```
+
+
+```python
+# __SOLUTION__
+# Check for nulls in the test set
 test.isnull().sum()
 ```
 
@@ -616,6 +633,7 @@ So we have a decent amount missing data for *Age* in both the train and tests se
 
 ```python
 # Performing preprocessing on the train and test data will be more effecient if we combine the two date sets.
+# run this cell with no changes
 combined = pd.concat([train, test], axis=0, sort=False)
 ```
 
@@ -631,6 +649,7 @@ Once we clean up *Age* we can create a variable from it called *Child*, that all
 
 
 ```python
+# run this cell with no changes
 #Age column
 combined['Age'].fillna(combined['Age'].median(),inplace=True) # Age
 
@@ -648,6 +667,14 @@ combined['Child'] = combined['Age'].apply(lambda age: 1 if age>=18 else 0)
 
 
 ```python
+# view the current status of the combined dataframe
+
+```
+
+
+```python
+#  __SOLUTION__
+# view the current status of the combined dataframe
 combined.info()
 ```
 
@@ -690,6 +717,7 @@ While the names of the individual passengers is not germane to our neural networ
 
 
 ```python
+# run this cell with no changes
 # Break up the string that has the title and names
 combined['Title'] = combined['Name'].str.split('.').str.get(0)  # output : 'Futrelle, Mrs'
 combined['Title'] = combined['Title'].str.split(',').str.get(1) # output : 'Mrs '
@@ -704,12 +732,12 @@ for i in range(len(french_titles)):
         if i == j:
             combined['Title'] = combined['Title'].str.replace(french_titles[i],english_titles[j])
 
-# Seperate the titles into "major" and "others", the latter would be, e.g., Reverend
+# Separate the titles into "major" and "others", the latter would be, e.g., Reverend
 major_titles = ['Mr','Mrs','Miss','Master']
 combined['Title'] = combined['Title'].apply(lambda title: title if title in major_titles else 'Others')
 ```
 
-Finally, we ned to drop the feature columns that we do not need for our model.
+Finally, we ned to drop the feature columns that we do not need for our model (`PassengerID`, `Name`, `Ticket`, and `Cabin`).
 
 
 ```python
@@ -729,7 +757,15 @@ We need to split our data back into the training and test sets now that we have 
 
 
 ```python
-# Separating the data back into train and test sets
+# Separate the data back into train and test sets
+test = None
+train = None
+```
+
+
+```python
+# __SOLUTION__
+# Separate the data back into train and test sets
 test = combined[combined['Survived'].isnull()].drop(['Survived'],axis=1)
 train = combined[combined['Survived'].notnull()]
 ```
@@ -758,6 +794,7 @@ Let's use the data science pipeline for our neural network model.
 
 
 ```python
+# __SOLUTION__
 # It will help to define our model in terms of a pipeline
 def build_classifier(optimizer):
     classifier = Sequential()
@@ -768,7 +805,22 @@ def build_classifier(optimizer):
     return classifier
 ```
 
-#### Fitting the optimal model and evaluating with `TensorBoard`
+
+```python
+# It will help to define our model in terms of a pipeline
+def build_classifier(optimizer):
+    classifier = Sequential()
+    # use classifer.add() to add layers
+    # 
+    # ... 
+    #
+    # use classifer.compile() as your last line of the definition; use loss='binary_crossentropy',metrics=['accuracy']
+    return classifier
+
+# Note: Do not use regularization methods or GridSearch. Those will be for next time!
+```
+
+#### Fitting the optimal model and evaluating with `TensorBoaard`
 
 #### `TensorBoard`
 
@@ -793,7 +845,7 @@ file_writer = tf.summary.create_file_writer(log_dir)
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 ```
 
-    2023-06-06 18:39:03.066143: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+    2023-06-06 22:34:46.172842: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
     To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
 
@@ -819,48 +871,50 @@ classifier.fit(X_train,
 # The other tabs in TensorBoard will still be function, but if you want the graphs then verbose needs to be 1 (progress bar).
 ```
 
-    /tmp/ipykernel_176/3357939647.py:3: DeprecationWarning: KerasClassifier is deprecated, use Sci-Keras (https://github.com/adriangb/scikeras) instead. See https://www.adriangb.com/scikeras/stable/migration.html for help migrating.
+    Epoch 1/16
+
+
+    /tmp/ipykernel_592/3357939647.py:3: DeprecationWarning: KerasClassifier is deprecated, use Sci-Keras (https://github.com/adriangb/scikeras) instead. See https://www.adriangb.com/scikeras/stable/migration.html for help migrating.
       classifier = KerasClassifier(build_fn = build_classifier,
 
 
-    Epoch 1/16
-    90/90 [==============================] - 1s 1ms/step - loss: 0.6149 - accuracy: 0.7767
+    90/90 [==============================] - 1s 2ms/step - loss: 0.6158 - accuracy: 0.7093
     Epoch 2/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.4516 - accuracy: 0.8081
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4528 - accuracy: 0.8137
     Epoch 3/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.4259 - accuracy: 0.8182
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4232 - accuracy: 0.8238
     Epoch 4/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.4132 - accuracy: 0.8305
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4131 - accuracy: 0.8249
     Epoch 5/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.4050 - accuracy: 0.8373
+    90/90 [==============================] - 0s 2ms/step - loss: 0.4069 - accuracy: 0.8272
     Epoch 6/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.4025 - accuracy: 0.8373
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4027 - accuracy: 0.8316
     Epoch 7/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3996 - accuracy: 0.8373
+    90/90 [==============================] - 0s 2ms/step - loss: 0.3998 - accuracy: 0.8350
     Epoch 8/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3966 - accuracy: 0.8418
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3979 - accuracy: 0.8316
     Epoch 9/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3930 - accuracy: 0.8339
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3943 - accuracy: 0.8406
     Epoch 10/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3908 - accuracy: 0.8462
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3927 - accuracy: 0.8418
     Epoch 11/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3917 - accuracy: 0.8440
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3913 - accuracy: 0.8350
     Epoch 12/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3882 - accuracy: 0.8429
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3896 - accuracy: 0.8406
     Epoch 13/16
-    90/90 [==============================] - 0s 2ms/step - loss: 0.3845 - accuracy: 0.8429
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3873 - accuracy: 0.8440
     Epoch 14/16
-    90/90 [==============================] - 0s 2ms/step - loss: 0.3865 - accuracy: 0.8395
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3901 - accuracy: 0.8418
     Epoch 15/16
-    90/90 [==============================] - 0s 2ms/step - loss: 0.3848 - accuracy: 0.8440
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3878 - accuracy: 0.8440
     Epoch 16/16
-    90/90 [==============================] - 0s 1ms/step - loss: 0.3832 - accuracy: 0.8462
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3846 - accuracy: 0.8429
 
 
 
 
 
-    <keras.callbacks.History at 0x7feed478b460>
+    <keras.callbacks.History at 0x7fe4a61a2f80>
 
 
 
@@ -883,141 +937,6 @@ results['Survived'] = results['Survived'].apply(lambda row: 1 if row > 0.5 else 
 results.to_csv('titanic_submission.csv',index=False)
 results.head(20)
 ```
-
-    14/14 [==============================] - 0s 933us/step
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>PassengerId</th>
-      <th>Survived</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>892</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>893</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>894</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>895</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>896</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>897</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>898</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>899</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>900</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>901</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>902</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>903</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>904</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>905</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>906</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>907</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>908</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>909</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>910</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>911</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 Continue to tweak your model until you are happy with the results based on model evaluation.
 
