@@ -128,10 +128,7 @@ train.head()
 
 
 
-
-  <div id="df-2e617e68-d460-47d1-b63f-f7f163e97132">
-    <div class="colab-df-container">
-      <div>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -242,82 +239,6 @@ train.head()
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2e617e68-d460-47d1-b63f-f7f163e97132')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-2e617e68-d460-47d1-b63f-f7f163e97132 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2e617e68-d460-47d1-b63f-f7f163e97132');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-
 
 
 
@@ -357,10 +278,7 @@ test.head()
 
 
 
-
-  <div id="df-a024cd02-17e3-4a73-ac85-af924be7835a">
-    <div class="colab-df-container">
-      <div>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -465,82 +383,6 @@ test.head()
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a024cd02-17e3-4a73-ac85-af924be7835a')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-a024cd02-17e3-4a73-ac85-af924be7835a button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a024cd02-17e3-4a73-ac85-af924be7835a');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-
 
 
 
@@ -600,7 +442,7 @@ plt.show()
 
 
     
-![png](output_27_0.png)
+![png](index_files/index_27_0.png)
     
 
 
@@ -617,7 +459,7 @@ plt.show()
 
 
     
-![png](output_29_0.png)
+![png](index_files/index_29_0.png)
     
 
 
@@ -636,7 +478,7 @@ plt.show()
 
 
     
-![png](output_31_0.png)
+![png](index_files/index_31_0.png)
     
 
 
@@ -647,14 +489,14 @@ Finally, let's look at a heatmap to see which columns are correlated.
 
 ```python
 # Heatmap
-corr_train = train.corr()
+corr_train = train.corr(numeric_only=True)
 sns.heatmap(corr_train)
 plt.show()
 ```
 
 
     
-![png](output_33_0.png)
+![png](index_files/index_33_0.png)
     
 
 
@@ -810,7 +652,7 @@ combined.info()
 ```
 
     <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 1309 entries, 0 to 417
+    Index: 1309 entries, 0 to 417
     Data columns (total 13 columns):
      #   Column       Non-Null Count  Dtype  
     ---  ------       --------------  -----  
@@ -872,7 +714,7 @@ Finally, we ned to drop the feature columns that we do not need for our model.
 
 ```python
 #Dropping the Irrelevant Columns
-combined.drop(['PassengerId','Name','Ticket','Cabin'], 1, inplace=True)
+combined.drop(['PassengerId','Name','Ticket','Cabin'], axis=1, inplace=True)
 
 # Getting Dummy Variables and Dropping the Original Categorical Variables
 categorical_vars = combined[['Pclass','Sex','Embarked','Title','Child']] # Get Dummies of Categorical Variables 
@@ -880,10 +722,6 @@ dummies = pd.get_dummies(categorical_vars,drop_first=True)
 combined = combined.drop(['Pclass','Sex','Embarked','Title','Child'],axis=1)
 combined = pd.concat([combined, dummies],axis=1)
 ```
-
-    /usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:2: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
-      
-
 
 #### Resplitting the data and scaling the data.
 
@@ -901,7 +739,7 @@ We need to get the training data into the predictors and the predicted variables
 
 ```python
 # Training
-X_train = train.drop(['Survived'],1)
+X_train = train.drop(['Survived'],axis=1)
 y_train = train['Survived']
 
 # Scaling
@@ -909,10 +747,6 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 test = sc.fit_transform(test)
 ```
-
-    /usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:2: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
-      
-
 
 ## Neural Network Model
 
@@ -934,7 +768,7 @@ def build_classifier(optimizer):
     return classifier
 ```
 
-#### Fitting the optimal model and evaluating with `TensorBoaard`
+#### Fitting the optimal model and evaluating with `TensorBoard`
 
 #### `TensorBoard`
 
@@ -959,6 +793,10 @@ file_writer = tf.summary.create_file_writer(log_dir)
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 ```
 
+    2023-06-06 18:39:03.066143: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+    To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+
 #### Fitting the optimal model and evaluating with `TensorBoaard`
 
 
@@ -981,60 +819,58 @@ classifier.fit(X_train,
 # The other tabs in TensorBoard will still be function, but if you want the graphs then verbose needs to be 1 (progress bar).
 ```
 
-    /usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:6: DeprecationWarning: KerasClassifier is deprecated, use Sci-Keras (https://github.com/adriangb/scikeras) instead. See https://www.adriangb.com/scikeras/stable/migration.html for help migrating.
-      
+    /tmp/ipykernel_176/3357939647.py:3: DeprecationWarning: KerasClassifier is deprecated, use Sci-Keras (https://github.com/adriangb/scikeras) instead. See https://www.adriangb.com/scikeras/stable/migration.html for help migrating.
+      classifier = KerasClassifier(build_fn = build_classifier,
 
 
     Epoch 1/16
-    90/90 [==============================] - 2s 6ms/step - loss: 0.6402 - accuracy: 0.6611
+    90/90 [==============================] - 1s 1ms/step - loss: 0.6149 - accuracy: 0.7767
     Epoch 2/16
-    90/90 [==============================] - 1s 6ms/step - loss: 0.4650 - accuracy: 0.8047
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4516 - accuracy: 0.8081
     Epoch 3/16
-    90/90 [==============================] - 1s 6ms/step - loss: 0.4232 - accuracy: 0.8238
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4259 - accuracy: 0.8182
     Epoch 4/16
-    90/90 [==============================] - 1s 7ms/step - loss: 0.4127 - accuracy: 0.8339
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4132 - accuracy: 0.8305
     Epoch 5/16
-    90/90 [==============================] - 1s 7ms/step - loss: 0.4068 - accuracy: 0.8283
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4050 - accuracy: 0.8373
     Epoch 6/16
-    90/90 [==============================] - 0s 5ms/step - loss: 0.4006 - accuracy: 0.8272
+    90/90 [==============================] - 0s 1ms/step - loss: 0.4025 - accuracy: 0.8373
     Epoch 7/16
-    90/90 [==============================] - 1s 6ms/step - loss: 0.3987 - accuracy: 0.8316
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3996 - accuracy: 0.8373
     Epoch 8/16
-    90/90 [==============================] - 1s 7ms/step - loss: 0.3970 - accuracy: 0.8328
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3966 - accuracy: 0.8418
     Epoch 9/16
-    90/90 [==============================] - 0s 5ms/step - loss: 0.3939 - accuracy: 0.8328
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3930 - accuracy: 0.8339
     Epoch 10/16
-    90/90 [==============================] - 0s 5ms/step - loss: 0.3914 - accuracy: 0.8418
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3908 - accuracy: 0.8462
     Epoch 11/16
-    90/90 [==============================] - 1s 10ms/step - loss: 0.3870 - accuracy: 0.8440
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3917 - accuracy: 0.8440
     Epoch 12/16
-    90/90 [==============================] - 1s 9ms/step - loss: 0.3903 - accuracy: 0.8361
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3882 - accuracy: 0.8429
     Epoch 13/16
-    90/90 [==============================] - 1s 8ms/step - loss: 0.3872 - accuracy: 0.8406
+    90/90 [==============================] - 0s 2ms/step - loss: 0.3845 - accuracy: 0.8429
     Epoch 14/16
-    90/90 [==============================] - 1s 6ms/step - loss: 0.3861 - accuracy: 0.8418
+    90/90 [==============================] - 0s 2ms/step - loss: 0.3865 - accuracy: 0.8395
     Epoch 15/16
-    90/90 [==============================] - 1s 6ms/step - loss: 0.3853 - accuracy: 0.8474
+    90/90 [==============================] - 0s 2ms/step - loss: 0.3848 - accuracy: 0.8440
     Epoch 16/16
-    90/90 [==============================] - 1s 6ms/step - loss: 0.3848 - accuracy: 0.8418
+    90/90 [==============================] - 0s 1ms/step - loss: 0.3832 - accuracy: 0.8462
 
 
 
 
 
-    <keras.callbacks.History at 0x7f17289d2190>
+    <keras.callbacks.History at 0x7feed478b460>
 
 
 
 
 ```python
 # Call TensorBoard
-%tensorboard --logdir logs/fit
+import os
+print(f"https://{os.getenv('SATURN_JUPYTER_BASE_DOMAIN')}/proxy/8000/")
+%tensorboard --logdir logs/fit --port 8000 --bind_all     
 ```
-
-
-    <IPython.core.display.Javascript object>
-
 
 #### Results and Predictions
 
@@ -1048,16 +884,13 @@ results.to_csv('titanic_submission.csv',index=False)
 results.head(20)
 ```
 
-    14/14 [==============================] - 0s 2ms/step
+    14/14 [==============================] - 0s 933us/step
 
 
 
 
 
-
-  <div id="df-0ff333d8-ef32-40f0-b73a-04413121a248">
-    <div class="colab-df-container">
-      <div>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1183,82 +1016,6 @@ results.head(20)
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-0ff333d8-ef32-40f0-b73a-04413121a248')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-0ff333d8-ef32-40f0-b73a-04413121a248 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-0ff333d8-ef32-40f0-b73a-04413121a248');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-
 
 
 
