@@ -551,7 +551,7 @@ def build_classifier(optimizer):
     return classifier
 ```
 
-#### Fitting the optimal model and evaluating with `TensorBoaard`
+#### Fitting the optimal model and evaluating with `TensorBoard`
 
 #### `TensorBoard`
 
@@ -559,7 +559,7 @@ def build_classifier(optimizer):
 
 N.B. When we loaded the libraries, we loaded the TensorBoard notebook extension. (It is the last line of code in the first code chunk.)
 
-#### Fitting the optimal model and evaluating with `TensorBoaard`
+#### Fitting the optimal model and evaluating with `TensorBoard`
 
 #### Results and Predictions
 
